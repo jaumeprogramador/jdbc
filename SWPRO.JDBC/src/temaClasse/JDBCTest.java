@@ -1,3 +1,4 @@
+package temaClasse;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -26,7 +27,7 @@ class JDBCTest {
 //            int idAut = rs.getInt("ID_AUT");
 //            String nom = rs.getString("NOM_AUT");
 //            System.out.println(nom);
-            Autors nova=new Autors(rs.getInt("ID_AUT"), rs.getString("NOM_AUT"));
+            Autors nova=new Autors(rs.getInt("ID_AUT"), rs.getString("NOM_AUT"), rs.getString("FK_NACIONALITAT"));
             System.out.println(nova);
             escriptors.add(nova);
             }

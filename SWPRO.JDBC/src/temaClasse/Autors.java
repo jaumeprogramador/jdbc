@@ -1,8 +1,10 @@
+package temaClasse;
 
 public class Autors {
 
 	int idAut;
     String nom;
+    String nacionalitat;
     
 	public int getIdAut() {
 		return idAut;
@@ -16,17 +18,25 @@ public class Autors {
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
-	
-	public Autors(int idAut, String nom) {
+	public String getNacionalitat() {
+		return nacionalitat;
+	}
+	public void setNacionalitat(String nacionalitat) {
+		this.nacionalitat = nacionalitat;
+	}
+	public Autors(int idAut, String nom, String clauForania) {
 		super();
 		this.idAut = idAut;
 		this.nom = nom;
 	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + idAut;
+		result = prime * result
+				+ ((nacionalitat == null) ? 0 : nacionalitat.hashCode());
 		result = prime * result + ((nom == null) ? 0 : nom.hashCode());
 		return result;
 	}
@@ -41,6 +51,11 @@ public class Autors {
 		Autors other = (Autors) obj;
 		if (idAut != other.idAut)
 			return false;
+		if (nacionalitat == null) {
+			if (other.nacionalitat != null)
+				return false;
+		} else if (!nacionalitat.equals(other.nacionalitat))
+			return false;
 		if (nom == null) {
 			if (other.nom != null)
 				return false;
@@ -50,8 +65,10 @@ public class Autors {
 	}
 	@Override
 	public String toString() {
-		return "Autors [idAut=" + idAut + ", nom=" + nom + "]";
+		return "Autors [idAut=" + idAut + ", nom=" + nom + ", nacionalitat="
+				+ nacionalitat + "]";
 	}
+	
     
     
     
